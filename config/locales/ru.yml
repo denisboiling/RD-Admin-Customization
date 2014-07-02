@@ -3,3 +3,6 @@ ru:
       global_site_phone: "Телефон для заказов"
       global_site_location: "Расположение магазина"
       global_site_email: "Email для связи/заказов"
+      is_new_product: "Блок Новинки"
+      is_recommended_product: "Рекомендуемый"
+      short_description: "Краткое описание"
