@@ -10,3 +10,8 @@ ru:
       is_recommended_product: "Block RECOMMENDED"
       short_description: "Short description"
 
+      partners:
+        admin_partners: "Partners"
+        new_partner: "New partner"
+        edit_partner: "Edit partner"
+

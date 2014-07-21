@@ -6,3 +6,8 @@ ru:
       is_new_product: "Блок Новинки"
       is_recommended_product: "Рекомендуемый"
       short_description: "Краткое описание"
+
+      partners:
+        admin_partners: "Партнеры"
+        new_partner: "Новый партнер"
+        edit_partner: "Редактировать партнера"
