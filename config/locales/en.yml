@@ -1,4 +1,4 @@
-# Sample localization file for English. Add more files in this directory for other locales.
+# Sample localization file for English. Add more filБ/Уes in this directory for other locales.
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 ru:
@@ -7,6 +7,7 @@ ru:
 #      global_site_location: "Расположение магазина"
 #      global_site_email: "Email для связи/заказов"
       is_new_product: "Block NEW"
-      is_recommended_product: "Block RECOMMENDED"
+      is_recommended_product: "RECOMMENDED"
       short_description: "Short description"
+      is_secondhand: "Second Hand"
 

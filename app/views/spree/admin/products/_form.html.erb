@@ -58,7 +58,7 @@
 
     <div class="clear"></div>
 
-    <div class="omega two columns">
+    <div class="omega three columns">
         <%= f.field_container :is_recommended_product do %>
             <%= f.label :is_recommended_product, Spree.t(:is_recommended_product) %>
             <%= f.error_message_on :is_recommended_product %>
@@ -66,11 +66,19 @@
         <% end %>
     </div>
 
-    <div class="omega two columns">
+    <div class="omega three columns">
       <%= f.field_container :is_new_product do %>
           <%= f.label :is_new_product, Spree.t(:is_new_product) %>
           <%= f.error_message_on :is_new_product %>
           <%= f.check_box :is_new_product %>
+      <% end %>
+    </div>
+
+    <div class="omega three columns">
+      <%= f.field_container :is_secondhand do %>
+          <%= f.label :is_secondhand, Spree.t(:is_secondhand) %>
+          <%= f.error_message_on :is_secondhand %>
+          <%= f.check_box :is_secondhand %>
       <% end %>
     </div>
     
