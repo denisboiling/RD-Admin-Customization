@@ -12,3 +12,10 @@ ru:
         admin_partners: "Партнеры"
         new_partner: "Новый партнер"
         edit_partner: "Редактировать партнера"
+        partner_name: "Партнер"
+        partner_phone: "Контакты"
+        partner_url: "Сайт"
+        partner_uniq: "ID"
+        back_to_partners_list: "Назад к списку партнеров"
+        partner_deliver: "Поставщик"
+

@@ -119,6 +119,12 @@
       <%= f.collection_select(:tax_category_id, @tax_categories, :id, :name, { :include_blank => Spree.t('match_choices.none') }, { :class => 'select2' }) %>
       <%= f.error_message_on :tax_category %>
     <% end %>
+
+    <%= f.field_container :partners do %>
+        <%= f.label :partner_id, Spree.t("partners.partner_deliver") %>
+        <%= f.collection_select(:partner_id, Spree::Partner.all, :id, :pname, { :include_blank => Spree.t('match_choices.none') }, { :class => 'select2' }) %>
+        <%= f.error_message_on :partner %>
+    <% end %>
   </div>
 
   <div class="twelve columns alpha omega">

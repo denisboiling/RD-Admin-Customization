@@ -1,54 +1,58 @@
 <%= render 'spree/admin/shared/configuration_menu' %>
 
-<% content_for :page_title do %>
-  <%= Spree.t(:zones) %>
-<% end %>
-
 <% content_for :page_actions do %>
-  <li>
-    <%= button_link_to Spree.t(:new_zone), new_object_url, :icon => 'plus', :id => 'admin_new_zone_link' %>
-  </li>
+  <li><%= button_link_to Spree.t("partners.new_partner"), new_object_url, :icon => 'icon-plus', :id => 'admin_new_partner' %></li>
 <% end %>
 
-<%= paginate @zones %>
+<% content_for :page_title do %>
+   <%= Spree.t("partners.admin_partners") %>
+<% end %>
 
-<% if @zones.any? %>
-  <table class="index" id='listing_zones' data-hook>
-    <colgroup>
-      <col style="width: 30%" />
-      <col style="width: 40%" />
-      <col style="width: 15%" />
-      <col style="width: 15%" />
-    </colgroup>
-    <thead>
-      <tr data-hook="zones_header">
-        <th><%= sort_link @search,:name, Spree.t(:name), :title => 'zones_order_by_name_title' %></th>
-        <th>
-          <%= sort_link @search,:description, Spree.t(:description), {}, {:title => 'zones_order_by_description_title'} %>
-        </th>
-        <th><%= Spree.t(:default_tax) %></th>
-        <th class="actions"></th>
+<% if @partners.any? %>
+<table class="index responsive" id="listing_pages" data-hook>
+  <colgroup>
+    <col style="width: 20%">
+    <col style="width: 35%">
+    <col style="width: 25%">
+    <col style="width: 10%">
+    <col style="width: 10%">
+  </colgroup>
+  <thead>
+    <tr data-hook="admin_partners_index_headers">
+      <th><%= Spree.t("partners.partner_name") %></th>
+      <th><%= Spree.t("partners.partner_url") %></th>
+      <th><%= Spree.t("partners.partner_phone") %></th>
+      <th><%= Spree.t("partners.partner_uniq") %></th>
+      <th data-hook="admin_partners_index_header_actions" class="actions"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @partners.each do |partner| %>
+      <tr data-hook="admin_partners_index_rows" class="<%= cycle('odd', 'even') %>" id="<%= dom_id partner %>">
+        <td>
+          <%= partner.pname %>
+        </td>
+        <td>
+          <%= link_to partner.site_url, partner.site_url, :target => '_blank' %>
+        </td>
+        <td>
+          <%= partner.phone %>
+        </td>
+        <td class="align-center">
+          <%= partner.unique %>
+        </td>
+        <td class="actions" data-hook="admin_partners_index_row_actions">
+          <%= link_to_edit partner, :no_text => true %>
+          <%= link_to_delete partner, :no_text => true %>
+        </td>
       </tr>
-    </thead>
-    <tbody>
-      <% @zones.each do |zone| %>
-        <tr id="<%= spree_dom_id zone %>" data-hook="zones_row" class="<%= cycle('odd', 'even')%>">
-          <td class="align-center"><%= zone.name %></td>
-          <td><%= zone.description %></td>
-          <td class="align-center"><%= zone.default_tax? ? Spree.t(:say_yes) : Spree.t(:say_no) %></td>
-          <td class="actions">
-            <%=link_to_edit zone, :no_text => true %>
-            <%=link_to_delete zone, :no_text => true %>
-          </td>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
+    <% end %>
+  </tbody>
+</table>
 <% else %>
   <div class="alpha twelve columns no-objects-found">
-    <%= Spree.t(:no_resource_found, resource: I18n.t(:other, scope: 'activerecord.models.spree/zone')) %>,
-    <%= link_to Spree.t(:add_one), spree.new_admin_zone_path %>!
+    <%= Spree.t(:no_resource_found, resource: I18n.t(:other, scope: 'activerecord.models.spree/partner')) %>,
+    <%= link_to Spree.t(:add_one), spree.new_admin_partner_path %>!
   </div>
 <% end %>
-
-<%= paginate @zones %>

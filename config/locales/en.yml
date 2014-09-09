@@ -15,4 +15,10 @@ ru:
         admin_partners: "Partners"
         new_partner: "New partner"
         edit_partner: "Edit partner"
+        partner_name: "Partner"
+        partner_phone: "Contacts"
+        partner_url: "Site"
+        partner_uniq: "ID"
+        back_to_partners_list: "Back to partners list"
+        partner_deliver: "Supplier"
 

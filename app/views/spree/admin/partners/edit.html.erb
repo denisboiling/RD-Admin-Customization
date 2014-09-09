@@ -1,19 +1,18 @@
-<%= render :partial => 'spree/admin/shared/configuration_menu' %>
+<%= render 'spree/admin/shared/configuration_menu' %>
 
 <% content_for :page_title do %>
-  <%= Spree.t(:editing_zone) %>
+   <%= Spree.t("partners.edit_partner") %>  "<%= @partner.pname%>"
 <% end %>
 
 <% content_for :page_actions do %>
-  <li>
-    <%= button_link_to Spree.t(:back_to_zones_list), admin_zones_path, :icon => 'arrow-left' %>
-  </li>
+  <li><%= button_link_to Spree.t("partners.back_to_partners_list"), spree.admin_partners_url, :icon => 'icon-arrow-left' %></li>
 <% end %>
 
-<%= render :partial => 'spree/shared/error_messages', :locals => { :target => @zone } %>
+<%= render "spree/shared/error_messages", :target => @partner %>
 
-<%= form_for [:admin, @zone] do |zone_form| %>
-  <%= render :partial => 'form', :locals => { :zone_form => zone_form } %>
-  <div class="clear"></div>
-  <%= render :partial => 'spree/admin/shared/edit_resource_links' %>
+<%= form_for [:admin, @partner] do |f| %>
+  <fieldset class="no-border-top">
+    <%= render :partial => 'form', :locals => { :f => f } %>
+    <%= render :partial => 'spree/admin/shared/edit_resource_links' %>
+  </fieldset>
 <% end %>

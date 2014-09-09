@@ -1,5 +1,5 @@
-Spree::Core::Engine.routes.append do
+Spree::Core::Engine.add_routes do
   namespace :admin do
-    resource :partners
+    resources :partners
   end
 end

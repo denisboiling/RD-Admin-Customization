@@ -1,37 +1,33 @@
-<div class="alpha six columns" data-hook="admin_zone_form_fields">
-  <fieldset class="no-border-bottom">
-    <legend align="center"><%= Spree.t(:general_settings)%></legend>
+<div data-hook="admin_partner_form_fields">
 
-    <%= zone_form.field_container :name do %>
-      <%= zone_form.label :name, Spree.t(:name) %><br />
-      <%= zone_form.text_field :name, :class => 'fullwidth' %>
+  <div data-hook="admin_partner_form_meta" class="alpha omega twelve columns">
+
+    <%= f.field_container :pname do %>
+        <%= f.label :pname %><br />
+        <%= f.text_field :pname, :class => 'fullwidth name' %>
+        <%= f.error_message_on :pname %>
     <% end %>
 
-    <%= zone_form.field_container :description do %>
-      <%= zone_form.label :description, Spree.t(:description) %><br />
-      <%= zone_form.text_field :description, :class => 'fullwidth' %>
+    <%= f.field_container :phone do %>
+        <%= f.label :phone %><br />
+        <%= f.text_field :phone, :class => 'fullwidth phone' %>
+        <%= f.error_message_on :phone %>
     <% end %>
 
-    <div data-hook="default" class="field">
-      <%= zone_form.check_box :default_tax %>
-      <%= label_tag Spree.t(:default_tax_zone) %>
-    </div>
+    <%= f.field_container :unique do %>
+        <%= f.label :unique %><br />
+        <%= f.text_field :unique, :class => 'fullwidth unique' %>
+        <%= f.error_message_on :unique %>
+    <% end %>
 
-    <div data-hook="type" class="field">
-      <%= label_tag Spree.t(:type) %>
-      <ul>
-        <li>
-          <%= zone_form.radio_button('kind', 'country', { :id => 'country_based' }) %>
-          <%= label_tag :country_based, Spree.t(:country_based) %>
-        </li>
-        <li>
-          <%= zone_form.radio_button('kind', 'state', { :id => 'state_based' }) %>
-          <%= label_tag :state_based, Spree.t(:state_based) %>
-        </li>
-      </ul>
-    </div>
-  </fieldset>
+    <%= f.field_container :site_url do %>
+        <%= f.label :site_url %><br />
+        <%= f.text_field :site_url, :class => 'fullwidth site_url'%>
+        <%= f.error_message_on :site_url %>
+    <% end %>
+
+  </div>
+  <div class="clear"></div>
+  <div data-hook="admin_partner_form_additional_fields"></div>
+  <div class="clear"></div>
 </div>
-
-<%= render :partial => 'state_members', :locals => { :zone_form => zone_form }%>
-<%= render :partial => 'country_members', :locals => { :zone_form => zone_form } %>
