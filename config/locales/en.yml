@@ -6,13 +6,16 @@ ru:
 #      global_site_phone: "Телефон для заказов"
 #      global_site_location: "Расположение магазина"
 #      global_site_email: "Email для связи/заказов"
-      global_site_phone: "Global phone"
-      global_site_location: "Store dislocation"
-      global_site_email: "Email"
-      is_new_product: "New"
-      is_recommended_product: "Recommended"
-      is_secondhand: "Dismantling"
-      short_description: "Short description"
+      partners:
+        admin_partners: "Partners"
+        new_partner: "New partner"
+        edit_partner: "Edit partner"
+        partner_name: "Partner"
+        partner_phone: "Contacts"
+        partner_url: "Site"
+        partner_uniq: "ID"
+        back_to_partners_list: "Back to partners list"
+        partner_deliver: "Supplier"
 
 
       partners:
