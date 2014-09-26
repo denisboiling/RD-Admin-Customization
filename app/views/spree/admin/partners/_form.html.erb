@@ -26,6 +26,24 @@
         <%= f.error_message_on :site_url %>
     <% end %>
 
+    <%= f.field_container :banner do %>
+        <%= f.label :banner, Spree.t(:banner) %><br />
+        <%= f.file_field :banner %>
+    <% end %>
+
+    <div data-hook="thumbnail" class="field alpha three columns align-center">
+      <%= f.label Spree.t(:thumbnail) %><br>
+      <%= image_tag(@partner.banner)%>
+    </div>
+
+    <div class="omega three columns">
+      <%= f.field_container :in_banners do %>
+          <%= f.label :in_banners, Spree.t(:in_banners) %>
+          <%= f.error_message_on :in_banners %>
+          <%= f.check_box :in_banners %>
+      <% end %>
+    </div>
+
   </div>
   <div class="clear"></div>
   <div data-hook="admin_partner_form_additional_fields"></div>
