@@ -1,0 +1,18 @@
+<%= render 'spree/admin/shared/configuration_menu' %>
+
+<% content_for :page_title do %>
+   <%= Spree.t("autos.edit_auto") %>  "<%= @auto.name%>"
+<% end %>
+
+<% content_for :page_actions do %>
+  <li><%= button_link_to Spree.t("autos.back_to_autos_list"), spree.admin_autos_url, :icon => 'icon-arrow-left' %></li>
+<% end %>
+
+<%= render "spree/shared/error_messages", :target => @auto %>
+
+<%= form_for [:admin, @auto] do |f| %>
+  <fieldset class="no-border-top">
+    <%= render :partial => 'form', :locals => { :f => f } %>
+    <%= render :partial => 'spree/admin/shared/edit_resource_links' %>
+  </fieldset>
+<% end %>

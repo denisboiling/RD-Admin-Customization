@@ -19,3 +19,14 @@ ru:
         back_to_partners_list: "Назад к списку партнеров"
         partner_deliver: "Поставщик"
 
+      autos:
+        admin_autos: "Авто"
+        new_auto: "Новый авто"
+        edit_auto: "Редактировать авто"
+        auto_image: "Озображение"
+        auto_name: "Авто"
+        back_to_autos_list: "Назад к списку авто"
+        auto_body: "Кузов"
+        auto_year: "Год"
+
+

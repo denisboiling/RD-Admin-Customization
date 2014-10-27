@@ -28,3 +28,13 @@ ru:
         partner_uniq: "ID"
         back_to_partners_list: "Back to partners list"
         partner_deliver: "Supplier"
+
+      autos:
+        admin_autos: "Auto"
+        new_auto: "New auto"
+        edit_auto: "Edit auto"
+        auto_image: "Image"
+        auto_name: "Auto"
+        back_to_autos_list: "Back to autos list"
+        auto_body: "Body"
+        auto_year: "Year"

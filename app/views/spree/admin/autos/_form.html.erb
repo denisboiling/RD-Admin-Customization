@@ -1,0 +1,39 @@
+<div data-hook="admin_auto_form_fields">
+
+  <div data-hook="admin_auto_form_meta" class="alpha omega twelve columns">
+
+    <%= f.field_container :name do %>
+        <%= f.label :name %><br />
+        <%= f.text_field :name, :class => 'fullwidth name' %>
+        <%= f.error_message_on :name %>
+    <% end %>
+
+    <%= f.field_container :body do %>
+        <%= f.label :body %><br />
+        <%= f.text_field :body, :class => 'fullwidth phone' %>
+        <%= f.error_message_on :body %>
+    <% end %>
+
+    <%= f.field_container :year do %>
+        <%= f.label :year %><br />
+        <%= f.text_field :year, :class => 'fullwidth unique' %>
+        <%= f.error_message_on :year %>
+    <% end %>
+
+
+    <%= f.field_container :image do %>
+        <%= f.label :image, Spree.t(:image) %><br />
+        <%= f.file_field :image %>
+    <% end %>
+
+    <div data-hook="thumbnail" class="field alpha three columns align-center">
+      <%= f.label Spree.t(:thumbnail) %><br>
+      <%= image_tag(@auto.image)%>
+    </div>
+
+
+  </div>
+  <div class="clear"></div>
+  <div data-hook="admin_auto_form_additional_fields"></div>
+  <div class="clear"></div>
+</div>

@@ -18,6 +18,9 @@
     <%= tab(:partners, :url => spree.admin_partners_url, :icon => 'user') %>
 <% end %>
 <% if Spree.user_class && can?(:admin, Spree.user_class) %>
+    <%= tab(:autos, :url => spree.admin_autos_url, :icon => 'user') %>
+<% end %>
+<% if Spree.user_class && can?(:admin, Spree.user_class) %>
     <%= tab(:pages, :url => spree.admin_pages_url, :icon => 'file') %>
 <% end %>
 
