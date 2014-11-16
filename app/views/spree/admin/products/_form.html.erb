@@ -125,6 +125,31 @@
         <%= f.collection_select(:partner_id, Spree::Partner.all, :id, :pname, { :include_blank => Spree.t('match_choices.none') }, { :class => 'select2' }) %>
         <%= f.error_message_on :partner %>
     <% end %>
+
+    <input type="button" value="УЗНАТЬ ЦЕНУ" onclick="getInfo();">
+    <script>
+        function getInfo()
+        {
+
+            var sku = "<%=@product.sku%>";
+            $.ajax({
+                type:'POST',
+                url: '/get-info',
+                data: { code: sku},
+                success: function(data) {
+                    alert(data.item);
+                },
+                fail: function(){
+                    alert("Нет такого товара");
+                }
+
+
+            })
+
+            return;
+        }
+    </script>
+
   </div>
 
   <div class="twelve columns alpha omega">
