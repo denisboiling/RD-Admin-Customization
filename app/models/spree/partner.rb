@@ -4,8 +4,8 @@ class Spree::Partner < Spree::Base
   has_attached_file :banner,
                     styles: { mini: '67x31>', normal: '260x120>' },
                     default_style: :mini,
-                    url: '/assets/partners/:id/:style/:basename.:extension',
-                    path: ':rails_root/public/assets/partners/:id/:style/:basename.:extension',
+                    url: '/system/partners/:id/:style/:basename.:extension',
+                    path: ':rails_root/public/system/partners/:id/:style/:basename.:extension',
                     default_url: '/assets/default_taxon.png'
 
   validates_attachment :banner,
