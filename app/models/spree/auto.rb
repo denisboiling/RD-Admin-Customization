@@ -16,8 +16,8 @@ class Spree::Auto < Spree::Base
                         },
 
                     },
-                    :url => '/assets/service/autos/:id/:style/:basename.:extension',
-                    :path => ':rails_root/public/assets/service/autos/:id/:style/:basename.:extension'
+                    :url => '/system/service/autos/:id/:style/:basename.:extension',
+                    :path => ':rails_root/public/system/service/autos/:id/:style/:basename.:extension'
 
   validates_attachment_size :image, :less_than => 3.megabytes
   validates_attachment :image,
