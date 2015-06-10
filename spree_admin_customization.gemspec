@@ -3,8 +3,8 @@ Gem::Specification.new do |s|
   s.platform    = Gem::Platform::RUBY
   s.name        = 'spree_admin_customization'
   s.version     = '2.3.1'
-  s.summary     = 'TODO: Add gem summary here'
-  s.description = 'TODO: Add (optional) gem description here'
+  s.summary     = 'Admin spree customization'
+  s.description = 'Admin spree customization'
   s.required_ruby_version = '>= 1.9.3'
 
   s.author    = 'S.L.K'
